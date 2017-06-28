@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Do a Pose </> New Symphony</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/kinect-1.8.0.js"></script>
+	<script src="js/index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="fonts/Poplar.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="applicationContainer screen1">
+		<div class="wallpaper animated"></div>
+		<div class="tracks animated"></div>
+		<div class="train">
+			<div class="trainConnection"></div>
+			<div class="wagons">
+			</div>
+		</div>
+		<div class="workshopText">
+			<div class="standardWorkshopText">Doe mee en schrijf je in voor:</div>
+			<div class="variableWorkshopText">Workshop koken</div>
+		</div>
+		<div class="successText">Geslaagd!</div>
+		<button class="poseBtn">Inschrijven</button>
+	</div>
+	<div class="applicationContainer screen2">
+		<div class="wallpaper animated"></div>
+		<div class="tracks animated"></div>
+		<div class="singleWagon">
+			<div class="countDown">5</div>
+			<canvas class="poseCanvas" id="poseCanvas" width="400" height="600"></canvas>
+			<img class="singleWagonImg" src="img/kar-los.png">
+		</div>
+	</div>
+	<div class="applicationContainer screen3">
+		<div class="wallpaper animated"></div>
+		<div class="tracks animated"></div>
+		<div class="emailContainer">
+			<div class="emailHeader">Je emailadres:</div>
+			<input class="emailInput" id="emailInput" type="text" name="" placeholder="jouw-email@ns.nl">
+			<div class="emailEnterText">Druk op enter!</div>
+		</div>
+		<div class="singleWagon">
+			<img class="singleWagonImg" src="img/kar-los.png">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.applicationContainer {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	font-family: 'Poplar';
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.screen1 {
+	display: block;
+	z-index: 3;
+}
+
+.screen2 {
+	z-index: 2;
+}
+
+.screen3 {
+	z-index: 1;
+}
+
+.animated {
+	position: absolute;
+	-webkit-transition: all 1s linear;
+	transition: all 1s linear;
+}
+
+.wallpaper {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/achtergrond.png);
+	background-repeat: repeat-x;
+	background-position: 0 center;
+	background-size: cover;
+	z-index: 1;
+}
+
+.train {
+	bottom: 20px;
+	left: 0;
+	width: 100%;
+	height: 500px;
+/*	height: 30%;
+	background-image: url(http://images.clipartpanda.com/train-car-clipart-train-car-purple-hi.png);
+	background-repeat: repeat-x;
+	background-position: 0 center;
+	background-size: contain;*/
+	z-index: 2;
+	position: absolute;
+}
+
+.trainConnection {
+	bottom: 70px;
+	left: 0;
+	position: absolute;
+	background-color: #873800;
+	width: 100%;
+	height: 10px;
+	z-index: 2;
+}
+
+.wagons {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 500px;
+	height: 100%;
+	width: 100%;
+	overflow-x: none;
+	z-index: 1;
+}
+
+.wagon {
+	float: left;
+	width: 300px;
+	bottom: 0;
+	right: -300px;
+	z-index: 1;
+	width: 300px;
+}
+
+.wagonPersonImg {
+	max-width: 100%;
+	max-height: 400px;
+	display: block;
+	margin: 0 auto;
+	filter: brightness(0%);
+}
+
+.wagonCartImg {
+	width: 100%;
+}
+
+.wagonCity {
+	position: absolute;
+	bottom: 100px;
+	width: 100%;
+	font-size: 36px;
+	color: white;
+	text-align: center;
+}
+
+.tracks {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	background-image: url(../img/rails.png);
+	background-repeat: repeat-x;
+	background-position: 0 center;
+	background-size: contain;
+	z-index: 3;
+}
+
+.workshopText {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 20%;
+	text-align: center;
+	z-index: 4;
+	color: white;
+	display: none;
+}
+
+.standardWorkshopText {
+	padding: 10px;
+	font-size: 40px;
+	background-color: #48BAC1;
+	border-radius: 20px;
+	width: 500px;
+	margin: 0 auto 0 auto;
+}
+
+.variableWorkshopText {
+	margin: 20px auto 0 auto;
+	padding: 10px;
+	font-size: 30px;
+	background-color: #DE6DAF;
+	border-radius: 20px;
+	width: 300px;
+}
+
+.successText {
+	position: absolute;
+	margin: 0 auto 0 auto;
+	left: 0;
+	right: 0;
+	top: 20%;
+	text-align: center;
+	z-index: 4;
+	color: white;
+	width: 400px;
+	border-radius: 20px;
+	background-color: #48BAC1;
+	padding: 10px;
+	font-size: 40px;
+	display: none;
+}
+
+.poseCanvas {
+	width: 100%;
+	height: 600px;
+}
+
+.countDown {
+	color: white;
+	position: absolute;
+	font-size: 100px;
+	left: 0;
+	right: 0;
+	top: 30%;
+	margin: 0 auto 0 auto;
+	z-index: 2;
+	text-align: center;
+}
+
+.singleWagon {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	width: 400px;
+	margin: 0 auto 0 auto;
+	z-index: 1;
+}
+
+.singleWagonImg {
+	width: 100%;
+}
+
+.emailContainer {
+	position: absolute;
+	bottom: 50%;
+	width: 80%;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	margin: 0 auto 0 auto;
+	text-align: center;
+	padding: 10px;
+}
+
+.emailInput {
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.emailHeader {
+	color: white;
+	padding: 10px;
+	font-size: 50px;
+	background-color: #48BAC1;
+	border-radius: 20px;
+	width: 500px;
+	margin: 0 auto 20px auto;
+}
+
+.emailEnterText {
+	margin: 20px auto 0 auto;
+	padding: 10px;
+	font-size: 30px;
+	color: #DE6DAF;
+	border-radius: 20px;
+	opacity: 0;
+	-webkit-transition: all 0.25s linear;
+	transition: all 0.25s linear;
+}
+
+.hidden {
+	display: none;
+}
+
+.poseBtn {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+}
