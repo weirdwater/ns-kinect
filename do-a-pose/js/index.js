@@ -213,6 +213,7 @@ function startKinect() {
 function thomasEasterEgg() {
 	var url = window.location.href;
 	if(url.indexOf('?thomas') !== -1) {
+		$(".wallpaper").css('background-image', 'url(./img/thomas.jpg)');
 		myAudio.addEventListener('ended', function() {
 			this.currentTime = 0;
 			this.play();
