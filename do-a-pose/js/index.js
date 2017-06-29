@@ -4,6 +4,7 @@ var trainPosition = 0;
 var tracksPosition = 0;
 var firstLoad = true;
 var canvasImageToSave = null;
+var myAudio = new Audio('thomas.mp3'); 
 
 var subscriptions = [
 	"man",
@@ -40,6 +41,13 @@ function initScreen1() {
 		doAnimations();
 	});
 	
+	$("body").on('click', function(event) {
+		if(myAudio.paused) {
+			myAudio.play();
+		}
+		$("body").off('click');
+	});
+
 	$(".poseBtn").on('click', function(event) {
 		event.preventDefault();
 		clearTimeout(animationTimeout);
@@ -205,6 +213,13 @@ function startKinect() {
 			userViewerCanvasElement = document.getElementById("poseCanvas");
 			uiAdapter.bindStreamToCanvas(Kinect.USERVIEWER_STREAM_NAME, userViewerCanvasElement);
 		})(Kinect, KinectUI);
+	}
+	if(url.indexOf('?thomas') !== -1) {
+		myAudio.addEventListener('ended', function() {
+		    this.currentTime = 0;
+		    this.play();
+		}, false);
+		myAudio.play();
 	}
 }
 
