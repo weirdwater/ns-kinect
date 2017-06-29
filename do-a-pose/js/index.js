@@ -14,6 +14,7 @@ var subscriptions = [
 
 function initialize() {
 	startKinect();
+	thomasEasterEgg();
 	initScreen1();
 }
 
@@ -39,13 +40,6 @@ function initScreen1() {
 		subscriptions = result.subscriptions;
 		console.log(subscriptions);
 		doAnimations();
-	});
-	
-	$("body").on('click', function(event) {
-		if(myAudio.paused) {
-			myAudio.play();
-		}
-		$("body").off('click');
 	});
 
 	$(".poseBtn").on('click', function(event) {
@@ -214,12 +208,22 @@ function startKinect() {
 			uiAdapter.bindStreamToCanvas(Kinect.USERVIEWER_STREAM_NAME, userViewerCanvasElement);
 		})(Kinect, KinectUI);
 	}
+}
+
+function thomasEasterEgg() {
+	var url = window.location.href;
 	if(url.indexOf('?thomas') !== -1) {
 		myAudio.addEventListener('ended', function() {
-		    this.currentTime = 0;
-		    this.play();
+			this.currentTime = 0;
+			this.play();
 		}, false);
 		myAudio.play();
+		$("body").on('click', function(event) {
+			if(myAudio.paused) {
+				myAudio.play();
+			}
+			$("body").off('click');
+		});
 	}
 }
 
