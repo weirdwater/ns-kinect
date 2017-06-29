@@ -17,6 +17,7 @@ function initialize() {
 }
 
 function goToScreen1() {
+	console.log("goToScreen1");
 	$(".wagons").empty()
 	$(".screen1").fadeIn( 1000, function() {
 		$(".screen3").css('display', 'none');
@@ -25,6 +26,7 @@ function goToScreen1() {
 }
 
 function initScreen1() {
+	console.log("initScreen1");
 	$.ajax({
 		type: "get",
 		url: "https://project.cmi.hr.nl/2016_2017/medialab_ns_t3/api/getSubscriptions.php",
@@ -60,6 +62,7 @@ function initScreen1() {
 }
 
 function goToScreen2() {
+	console.log("goToScreen2");
 	$(".countDown").text(5);
 	$(".screen2").css('display', 'block');
 	$(".screen1").fadeOut( 1000, function() {
@@ -69,6 +72,7 @@ function goToScreen2() {
 }
 
 function initScreen2() {
+	console.log("initScreen2");
 	// start drawing on canvas
 	var counter = 5;
 	var interval = setInterval(function() {
@@ -82,6 +86,7 @@ function initScreen2() {
 }
 
 function goToScreen3() {
+	console.log("goToScreen3");
 	$("#emailInput").val("");
 	$(".screen3").css('display', 'block');
 	$(".screen2").fadeOut( 1000, function() {
@@ -91,6 +96,7 @@ function goToScreen3() {
 }
 
 function initScreen3() {
+	console.log("initScreen3");
 	$("#emailInput").focus();
 	$("#emailInput").on('propertychange change click input paste', function(event) {
 		if(isEmailValid($("#emailInput").val())) {
@@ -127,11 +133,13 @@ function initScreen3() {
 }
 
 function isEmailValid(email) {
+	console.log("isEmailValid");
 	var emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	return emailRegex.test(email);
 }
 
 function takeImage() {
+	console.log("takeImage");
 	$(".screen2").fadeOut( 100, function() {
 		// cancel drawing on canvas
 		var canvas = $("#poseCanvas")[0];
@@ -148,6 +156,7 @@ function takeImage() {
 }
 
 function doAnimations() {
+	console.log("doAnimations");
 	moveWallpaper();
 	moveTrain();
 	moveTracks();
@@ -187,14 +196,19 @@ function moveTracks() {
 }
 
 function startKinect() {
-	(function (Kinect, KinectUI) {var sensor = Kinect.sensor(Kinect.DEFAULT_SENSOR_NAME)
-	    var uiAdapter = KinectUI.createAdapter(sensor)
+	var url = window.location.href;
+	if(url.indexOf('project.cmi.hr.nl') === -1) {
+		(function (Kinect, KinectUI) {var sensor = Kinect.sensor(Kinect.DEFAULT_SENSOR_NAME)
+			console.log("startKinect");
+			var uiAdapter = KinectUI.createAdapter(sensor)
 
-	    userViewerCanvasElement = document.getElementById("poseCanvas");
-	    uiAdapter.bindStreamToCanvas(Kinect.USERVIEWER_STREAM_NAME, userViewerCanvasElement);
-	})(Kinect, KinectUI);
+			userViewerCanvasElement = document.getElementById("poseCanvas");
+			uiAdapter.bindStreamToCanvas(Kinect.USERVIEWER_STREAM_NAME, userViewerCanvasElement);
+		})(Kinect, KinectUI);
+	}
 }
 
 $( document ).ready(function() {
 	initialize();
+	console.log("initialize");
 });
